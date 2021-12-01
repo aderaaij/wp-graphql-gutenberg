@@ -36,6 +36,10 @@ class Block {
 						'type' => 'String',
 						'description' => __('Original HTML content with inner blocks.', 'wp-graphql-gutenberg')
 					],
+					'cdnContent' => [
+						'type' => 'String',
+						'description' => __('Original HTML content with media urls to CDN', 'wp-graphql-gutenberg')
+					],
 					'innerBlocks' => [
 						'type' => [
 							'list_of' => ['non_null' => 'Block']

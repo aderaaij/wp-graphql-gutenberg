@@ -175,6 +175,7 @@ class Block implements ArrayAccess {
 		$this->blockType = $registry[$this->name];
 		$this->originalContent = self::strip_newlines($data['innerHTML']);
 		$this->saveContent = self::parse_inner_content($data);
+		$this->cdnContent = self::strip_newlines(apply_filters( 'as3cf_filter_post_local_to_provider', $data['innerHTML']));
 		$this->order = $order;
 		$this->get_parent = function () use (&$parent) {
 			return $parent;
